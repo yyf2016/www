@@ -33,8 +33,8 @@ $rstUser=mysql_query($sqlUser);
 				 	echo "<td>{$rowUser['password']}</td>";
 				 	echo "<td>{$rowUser['regtime']}</td>";
 				 	echo "<td>{$rowUser['isAdmin']}</td>";
-				 	echo "<td><a href='?id={$rowUser['id']}'>修改</a></td>";
-				 	echo "<td><a href='?id={$rowUser['id']}'>删除</a></td>";
+				 	echo "<td><a href='edit.php?id={$rowUser['id']}'>修改</a></td>";
+				 	echo "<td><a href='delete.php?id={$rowUser['id']}'>删除</a></td>";
 				 }
 				?>
 			</table>
