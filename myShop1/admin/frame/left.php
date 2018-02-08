@@ -111,6 +111,33 @@ body {
 				</tr>
       </table>
 		<!--  分类管理结束    -->
+		
+		<!--  品牌管理开始   -->
+		<TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
+          <tr>
+            <td height="29">
+				<table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="8%"><img name="img8" id="img8" src="../public/images/ico04.gif" width="8" height="11" /></td>
+						<td width="92%">
+								<a href="javascript:" target="mainFrame" class="left-font03 aclick" id="2" >品牌管理</a></td>
+					</tr>
+				</table>
+			</td>
+          </tr>		  
+        </TABLE>
+		<table id="subtree2" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" 
+				cellspacing="0" class="left-table02">
+				<tr>
+				  <td width="9%" height="20" ><img id="xiaotu20" src="../public/images/ico05.gif" width="8" height="12" /></td>
+				  <td width="91%"><a href="../shopclass/index.php" target="mainFrame" class="left-font03" onClick="tupian('20');">品牌分类</a></td>
+				</tr>
+				<tr>
+				  <td width="9%" height="21" ><img id="xiaotu21" src="../public/images/ico05.gif" width="8" height="12" /></td>
+				  <td width="91%"><a href="../shopclass/add.php" target="mainFrame" class="left-font03" onClick="tupian('21');">品牌分类</a></td>
+				</tr>
+      </table>
+		<!--  品牌管理结束    -->
 	  </TD>
   </tr>
   

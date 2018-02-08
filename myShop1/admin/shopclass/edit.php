@@ -16,11 +16,11 @@ $rowShopclass=mysql_fetch_assoc($rstShopclass);
 <body>
 	<center>
 		<h1>商品分类修改</h1>
-		<form>
-			<table action="update.php" method="post">
+		<form action="update.php" method="post">
+			<table >
 				<tr>
 					<td>商品名称：</td>
-					<td><input type="input" name="shopclass" value="<?php echo $rowShopclass['shopname'];?>"></td>
+					<td><input type="input" name="shopname" value="<?php echo $rowShopclass['shopname'];?>"></td>
 				</tr>
 				<tr>
 					<td><input type="submit" name="" value="submit"></td>
