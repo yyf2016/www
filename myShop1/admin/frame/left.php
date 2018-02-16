@@ -138,6 +138,32 @@ body {
 				</tr>
       </table>
 		<!--  品牌管理结束    -->
+		<!--  商品管理开始   -->
+		<TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
+          <tr>
+            <td height="29">
+				<table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="8%"><img name="img8" id="img8" src="../public/images/ico04.gif" width="8" height="11" /></td>
+						<td width="92%">
+								<a href="javascript:" target="mainFrame" class="left-font03 aclick" id="4" >商品管理</a></td>
+					</tr>
+				</table>
+			</td>
+          </tr>		  
+        </TABLE>
+		<table id="subtree4" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" 
+				cellspacing="0" class="left-table02">
+				<tr>
+				  <td width="9%" height="20" ><img id="xiaotu20" src="../public/images/ico05.gif" width="8" height="12" /></td>
+				  <td width="91%"><a href="../shop/index.php" target="mainFrame" class="left-font03" onClick="tupian('20');">查看商品</a></td>
+				</tr>
+				<tr>
+				  <td width="9%" height="21" ><img id="xiaotu21" src="../public/images/ico05.gif" width="8" height="12" /></td>
+				  <td width="91%"><a href="../shop/add.php" target="mainFrame" class="left-font03" onClick="tupian('21');">添加商品</a></td>
+				</tr>
+      </table>
+		<!--  商品管理结束    -->
 	  </TD>
   </tr>
   
