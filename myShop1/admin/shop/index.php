@@ -2,7 +2,7 @@
 $conn=mysql_connect("localhost","root","123asd");
 mysql_select_db("myshop1");
 mysql_query("set names utf8");
-$sqlShop="select * from shop,brand,shopclass where shop.brand_id=brand.id and brand.shopclass_id=shopclass.id";
+$sqlShop="select shop.id,shop.shopname,shop.price,shop.stock,shop.upshelf,shop.image,shopclass.shopname from shop,brand,shopclass where shop.brand_id=brand.id and brand.shopclass_id=shopclass.id";
 $rstShop_brand_shopclass=mysql_query($sqlShop);
 ?>
 <!doctype html>
