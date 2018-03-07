@@ -67,10 +67,11 @@ if($image['error']==4){
             $minW=floor(200*$scale);
             $minH=floor(200*$scale);
             $imageMin=imagecreatetruecolor($minW,$minH);
-            imagecopyresampled($imageMin,$imageC,0,0,0,0,$imagewidth,$imageheight,$minW,$minH);
+            imagecopyresampled($imageMin,$imageB,0,0,0,0,$minW,$minH,$imagewidth,$imageheight);
             $minName="s_".$imageNEW;
             $minPath="../../public/upload/".$minName;
             $minOut="image".$imageExtN;
+            header("content-type:image/jpeg");
             $minOut($imageMin,$minPath);
             echo"<script>alert('图片修改成功')</script>";
             echo"<script>location='index.php'</script>";

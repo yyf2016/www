@@ -2,7 +2,7 @@
 $conn=mysql_connect("localhost","root","123asd");
 mysql_select_db("myshop1");
 mysql_query("set names utf8");
-$sqlShop="select shop.id,shop.shopname,shop.price,shop.stock,shop.upshelf,shop.image,shopclass.shopname from shop,brand,shopclass where shop.brand_id=brand.id and brand.shopclass_id=shopclass.id";
+$sqlShop="select shop.id,shop.shopname shopp,shop.price,shop.stock,shop.upshelf,shop.image,brand.brandname,shopclass.shopname shopn from shop,brand,shopclass where shop.brand_id=brand.id and brand.shopclass_id=shopclass.id";
 $rstShop_brand_shopclass=mysql_query($sqlShop);
 ?>
 <!doctype html>
@@ -31,7 +31,7 @@ $rstShop_brand_shopclass=mysql_query($sqlShop);
 			     while($rowSBS=mysql_fetch_assoc($rstShop_brand_shopclass)){
 			     	echo "<tr>";
 			     	echo "<td>{$rowSBS['id']}</td>";
-			     	echo "<td>{$rowSBS['shopname']}</td>";
+			     	echo "<td>{$rowSBS['shopp']}</td>";
 			     	echo "<td>{$rowSBS['price']}  </td>";
 			     	echo "<td>{$rowSBS['stock']}  </td>";
 			     	if($rowSBS['upshelf']==0){
@@ -41,7 +41,7 @@ $rstShop_brand_shopclass=mysql_query($sqlShop);
 			     	}
 			     	echo "<td><img src='../../public/upload/s_".$rowSBS['image']."'></td>";
 			     	echo "<td>{$rowSBS['brandname']}</td>";
-			     	echo "<td>{$rowSBS['shopname']}</td>";
+			     	echo "<td>{$rowSBS['shopn']}</td>";
 			     	echo "<td><a href='edit.php?id={$rowSBS['id']}'>修改</td>";
                     echo "<td><a href='delete.php?id={$rowSBS['id']}'>删除</td>";
 			     	echo "</tr>";

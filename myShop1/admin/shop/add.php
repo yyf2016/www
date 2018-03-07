@@ -52,7 +52,7 @@ mysql_query("set names utf8");
 								$sqlShopclassBrand="select * from brand where brand.shopclass_id={$rowShopclass['id']}";
 								$rstShopclassBrand=mysql_query($sqlShopclassBrand);
 								while($rowShopclassBrand=mysql_fetch_assoc($rstShopclassBrand)){
-									echo "<option value='{$rowShopclassBrand['shopclass_id']}'>|---{$rowShopclassBrand['brandname']}</option>";
+									echo "<option value='{$rowShopclassBrand['id']}'>|---{$rowShopclassBrand['brandname']}</option>";
 								}
 							}
 							?>

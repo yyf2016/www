@@ -49,8 +49,9 @@ if(move_uploaded_file($imageSrc,$imageDst)){
    $imageSDst="../../public/upload/".$imageS;
    $imageOut($min,$imageSDst);
    $sqlshop="insert into shop(shopname,price,stock,upshelf,image,brand_id) values('{$shopname}',{$price},{$stock},'{$upshelf}','{$image}','{$brand_id}')";
+   
   $rstshop=mysql_query($sqlshop);
-  if($rstshop){
+  if(mysql_affected_rows()){
   	echo "<script> alert('添加数据成功！')</script>";
   	echo "<script> location='index.php'</script>";
   }else{
