@@ -1,4 +1,4 @@
-<?php
+  <?php
 $shop_id=$_GET["shop_id"];
 $code=$_GET["code"];
 $conn=mysql_connect("localhost","root","123asd");
