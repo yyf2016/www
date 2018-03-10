@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -43,11 +46,11 @@ body {
 				<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
 				  <tr>
 					<td width="25%" rowspan="2"><img src="../public/images/ico02.gif" width="35" height="35" /></td>
-					<td width="75%" height="22" class="left-font01">用户名<span class="left-font02">king</span></td>
+					<td width="75%" height="22" class="left-font01">用户名：<span class="left-font02"><?php echo $_SESSION['username'] ?></span></td>
 				  </tr>
 				  <tr>
 					<td height="22" class="left-font01">
-						[&nbsp;<a href="../login/login.html" target="_top" class="left-font01">退出</a>&nbsp;]</td>
+						[&nbsp;<a href="../login/logout.php" target="_top" class="left-font01">退出</a>&nbsp;]</td>
 				  </tr>
 				</table>
 			</td>
