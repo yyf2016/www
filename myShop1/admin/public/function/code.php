@@ -9,7 +9,7 @@ $array=array_slice($arrayT,0,4);
 foreach($array as $str){
   $string=$string.$str;
 }
-$_SESSION['code']=$string;
+$_SESSION['code1']=$string;
 $image=imagecreatetruecolor(109,40);
 $white=imagecolorallocate($image,255,255,255);
 for($i=0;$i<20;$i++){

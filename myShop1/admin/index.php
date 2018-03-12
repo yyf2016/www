@@ -1,3 +1,6 @@
+<?php
+   include "public/function/acl.inc.php";
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
