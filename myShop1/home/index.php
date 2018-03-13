@@ -1,3 +1,9 @@
+<?php 
+  mysql_connect("localhost","root","123asd");
+  mysql_select_db("myshop1");
+  mysql_query("set names utf8");
+
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -14,15 +20,23 @@
 		<div class="nav"></div>
 		<div class="contentTotal">
 			<!-- 第一层start -->
+			<?php
+			   $sqlshopclass="select * from shopclass orderby id";
+			   mysql_query($sqlshopclass);
+			   $floor=1;
+			   while($rowshopclass=mysql_fetch_assoc($sqlshopclass)){
+                     
+			   
+			?>
 			<div class="content">
-				<a name="1f"></a>
+				<a name="<?php echo $floor ;?>f"></a>
 				<div class="head">
 					<div class="headleft">
-						<span>1F笔记本</span>
+						<span><?php echo $floor ;?>F笔记本</span>
 					</div>
 					<div class="headright">
-						<a href="#1f"><span>联想</span></a>
-						<a href="#1f"><span>苹果</span></a>
+						<a href="#<?php echo $floor ;?>f"><span>联想</span></a>
+						<a href="#<?php echo $floor ;?>f"><span>苹果</span></a>
 						<span>more</span>
 					</div>
 
@@ -52,48 +66,10 @@
 				</div>
 		    </div>
 			<!-- 第一层 end -->
-		
 			<div class="both"></div>
-			<!-- 第二层start -->
-			<div class="content">
-				<a name="2f"></a>
-				<div class="head">
-					<div class="headleft">
-						<span>2F手机</span>
-					</div>
-					<div class="headright">
-						<a href="#2f"><span>联想</span></a>
-						<a href="#2f"><span>苹果</span></a>
-						<span>more</span>
-					</div>
-
-				</div>
-				<div class="picture">
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg">
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg">
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg">
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg">
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg">
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg">
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg">
-					</div>
-				</div>
-			<!-- 第二层 end -->
-		    </div>
-			<div class="both"></div>
+		 	<?php 
+		       }  
+		    ?>
 	    </div>
 	    <div class="both"></div>
 		<div class="nav"></div>
