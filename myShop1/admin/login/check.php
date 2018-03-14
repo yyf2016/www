@@ -4,15 +4,15 @@ header("content-type:text/html;charset=utf-8");
 $username=$_POST['username'];
 $password=$_POST['password'];
 $code=strtolower($_POST['code']);
-echo"<pre>";
-print_r($_POST);
-echo"</pre>";
-echo $code;
+// echo"<pre>";
+// print_r($_POST);
+// echo"</pre>";
+// echo $code;
 
-echo $_SESSION['code1'];
-echo"<pre>";
-print_r($_SESSION);
-echo"</pre>";
+// echo $_SESSION['code1'];
+// echo"<pre>";
+// print_r($_SESSION);
+// echo"</pre>";
 if($code==strtolower($_SESSION['code1'])){
 	mysql_connect("localhost","root","123asd");
 	mysql_select_db("myshop1");

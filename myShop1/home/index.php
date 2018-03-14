@@ -21,55 +21,68 @@
 		<div class="contentTotal">
 			<!-- 第一层start -->
 			<?php
-			   $sqlshopclass="select * from shopclass orderby id";
-			   mysql_query($sqlshopclass);
+			   $sqlshopclass="select * from shopclass order by id";
+			   $rstshopclass=mysql_query($sqlshopclass);
 			   $floor=1;
-			   while($rowshopclass=mysql_fetch_assoc($sqlshopclass)){
-                     
+			   while($rowshopclass=mysql_fetch_assoc($rstshopclass)){
+                    
 			   
 			?>
 			<div class="content">
 				<a name="<?php echo $floor ;?>f"></a>
 				<div class="head">
 					<div class="headleft">
-						<span><?php echo $floor ;?>F笔记本</span>
+						<span><?php echo $floor ;?>F<?php echo $rowshopclass['shopname']?></span>
 					</div>
 					<div class="headright">
-						<a href="#<?php echo $floor ;?>f"><span>联想</span></a>
-						<a href="#<?php echo $floor ;?>f"><span>苹果</span></a>
+						<?php 
+						 $sqlBrand="select * from brand where shopclass_id='{$rowshopclass['id']}'";
+                         $rstBrand=mysql_query($sqlBrand);
+                         $num=0;
+                         $shopname_id=0;
+                         while($rowBrand=mysql_fetch_assoc($rstBrand)){
+                         	if($num<1){
+                         		$brand_id=$rowBrand['id'];
+                         	}
+
+						?>
+						<a href="index.php?shopclass_id=<?php echo $rowshopclass['id'] ?>&brand_id=<?php echo $rowBrand['id']?>#<?php echo $floor ;?>f"><span><?php echo $rowBrand['brandname']?></span></a>
+						
+						<?php 
+						    $num+=1; 
+						}
+					        ?>
 						<span>more</span>
 					</div>
 
 				</div>
 				<div class="picture">
+					<?php 
+					      if($rowshopclass['id']==$_GET['shopclass_id']){
+					      	$brand_id=$_GET['brand_id'];
+					      }else{
+					      	$brand_id=$brand_id;
+					      }
+					      $sqlShop="select * from shop where brand_id='{$brand_id}'";
+					      $rstShop=mysql_query($sqlShop);
+					      while($rowShop=mysql_fetch_assoc($rstShop)){
+
+					      
+					?>
 					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg"/>
+						<image src="../public/upload/s_<?php echo $rowShop['image']; ?>"/>
 					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg"/>
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg"/>
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg"/>
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg"/>
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg"/>
-					</div>
-					<div class="pictureInfo">
-						<image src="../public/upload/s_1520448890_753245529.jpg"/>
-					</div>
+					 <?php 
+					     }
+					 ?>
 				</div>
 		    </div>
 			<!-- 第一层 end -->
 			<div class="both"></div>
-		 	<?php 
-		       }  
-		    ?>
+           <?php
+            $floor+=1; 
+			}
+           ?>
 	    </div>
 	    <div class="both"></div>
 		<div class="nav"></div>
