@@ -28,6 +28,9 @@ body{
 	font-size:20px;
 	
 }
+
+
+
 #header img{
 	width:60px;
 	height:60px;
@@ -66,12 +69,20 @@ body{
 .head{
 	height:50px;
 	background-color:#666;
+
+}
+
+.head a{
+   color:#fff;
+   font-size:20px;
 }
 
 .head .headleft{
+	height:50px;
 	line-height:50px;
 	float:left;
 	padding-left:10px;
+	overflow:hidden;
 }
 
 .head .headright{

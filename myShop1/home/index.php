@@ -52,7 +52,7 @@
 						    $num+=1; 
 						}
 					        ?>
-						<span>more</span>
+						<span><a href="homeinfo/brandList.php?id=<?php echo $rowshopclass['id'] ?>">more</a></span>
 					</div>
 
 				</div>
