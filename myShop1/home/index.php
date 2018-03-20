@@ -70,7 +70,7 @@
 					      
 					?>
 					<div class="pictureInfo">
-						<a href="homeinfo/id=<?php $rowShop['id']; ?>"><image src="../public/upload/s_<?php echo $rowShop['image']; ?>"/></a>
+						<a href="homeinfo/shopinfo.php?id=<?php echo $rowShop['id']; ?>"><image src="../public/upload/s_<?php echo $rowShop['image']; ?>"/></a>
 					</div>
 					 <?php 
 					     }

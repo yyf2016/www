@@ -63,7 +63,7 @@ body{
 }
 .content{
 	width:1600px;
-	height:262px;
+	/*height:262px;*/
 	
 }
 .head{
@@ -89,6 +89,19 @@ body{
 	line-height:50px;
 	float:right;
 	padding-right:10px;
+}
+
+.picture{
+	text-align:center;
+}
+.picture table{
+	margin:0 auto;
+	color:#fff;
+	
+}
+
+.picture table a{
+	color:#fff;
 }
 
 .picture .pictureInfo{
