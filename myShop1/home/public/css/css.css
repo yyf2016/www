@@ -92,12 +92,17 @@ body{
 }
 
 .picture{
-	text-align:center;
+	/*text-align:center;*/
 }
 .picture table{
 	margin:0 auto;
 	color:#fff;
+	text-align:center;
 	
+}
+.picture table button{
+	width:30px;
+	height:30px;
 }
 
 .picture table a{

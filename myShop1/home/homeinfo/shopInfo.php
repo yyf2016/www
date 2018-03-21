@@ -40,7 +40,7 @@ $rowShop=mysql_fetch_assoc($rstShop);
 									<td><img src='../../public/upload/<?php echo $rowShop['image'] ?>'/></td>
 									<td><?php echo $rowShop['price'] ?>元</td>
 									<td><?php echo $rowShop['stock'] ?>件</td>
-									<td><a href=''>加入购物车</a></td>
+									<td><a href='../cart/addcart.php?id=<?php echo $rowShop['id']?>'>加入购物车</a></td>
 								</tr>
 							</table>
 						</form>
