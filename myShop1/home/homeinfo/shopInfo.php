@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start(); 
 mysql_connect("localhost","root","123asd");
 mysql_select_db("myshop1");
 mysql_query("set names utf8");
@@ -28,7 +29,6 @@ $rowShop=mysql_fetch_assoc($rstShop);
 					</div>
                 </div>
 					<div class="picture">
-						<form method="post">
 							<table border="1px" color="#fff" cellpading="50">
 								<tr>
 									<th>图片</th>
@@ -43,13 +43,36 @@ $rowShop=mysql_fetch_assoc($rstShop);
 									<td><a href='../cart/addcart.php?id=<?php echo $rowShop['id']?>'>加入购物车</a></td>
 								</tr>
 							</table>
-						</form>
-                       
 					</div>
                 <div class="both"></div>
-			</div>
+            </div>
+        </div> 
+        <div class="nav"></div>   
+                <div>
+                	<div><h3>请评论：</h3></div>
+                	<form action="updateCommit.php" method="post">
+                	<div>
+                    	<textarea name="commit" style="width:1600px;height:100px;resize:none"></textarea>
+                    </div>
+                    <input type="submit" name="submit" value="submit" style="width:80px;height:50px"/>
+                    <input type="reset"  name="reset" value="reset" style="width:80px;height:50px"/>
+                    <input type="hidden" name="shop_id" value="<?php echo $rowShop['id'] ?>">
+                    </form>
+                	<div class="head">
+                		<div class="headright">
+                	      <span>用户留言:</span>
+                        </div>
+                        <div class="headleft">
+                          <span>发帖时间</span>
+                        </div>
+                    </div>
+                    <div>
+                    	<span>这个商品的情况</span>
+                    </div>    
+                <div class="nav"></div>
+			
 
-		</div>
+		
 
 		<div class="nav"></div>
 		<?php include "../public/page/footer.php" ?>

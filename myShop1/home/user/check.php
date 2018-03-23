@@ -14,6 +14,8 @@ if($code==strtolower($_SESSION['code1'])){
 	while($rowUser=mysql_fetch_assoc($rstUser)){
 		if($rowUser['password']==$password){
 			$_SESSION['username']=$rowUser['username'];
+			$_SESSION['login']=1;
+			$_SESSION['user_id']=$rowUser['id'];
             echo "<script>location='../index.php'</script>";
 		}else{
 			echo "<script>alert('用户名或密码输入错误！')";
