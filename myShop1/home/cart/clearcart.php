@@ -2,7 +2,7 @@
 session_start();  
 $num=$_GET['del'];
 $shopname=$_GET['shopname'];
-swith($num){
+switch($num){
 	case 0:
 	unset($_SESSION['shop']);
 	break;
@@ -11,5 +11,5 @@ swith($num){
 	unset($_SESSION['shop'][$shopname]);
 	break;
 }
-echo "<script>location='account.php'</script>";
+echo "<script>location='../homeinfo/account.php'</script>";
 ?>

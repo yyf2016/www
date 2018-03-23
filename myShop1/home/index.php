@@ -1,4 +1,5 @@
 <?php 
+  session_start();
   mysql_connect("localhost","root","123asd");
   mysql_select_db("myshop1");
   mysql_query("set names utf8");

@@ -34,7 +34,7 @@ session_start();
 									
 								</tr>
 								<?php
-								   
+								   if(isset($_SESSION['shop'])){
 								    foreach($_SESSION['shop'] as $row){
 									$total+=$row['price']*$row['num'];
 								?>
@@ -46,7 +46,8 @@ session_start();
 									<td><?php echo $row['price']*$row['num'] ?></td>
 									<td><a href="../cart/clearcart.php?del=1&shopname=<?php echo $row['shopname'] ?>">删除</a></td>
 								</tr>
-								<?php 
+								<?php
+								 } 
 								} 
 								?>
 								<tr>

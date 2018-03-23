@@ -34,16 +34,23 @@ body{
 #header img{
 	width:60px;
 	height:60px;
+}	
+#header a{
+	color:#fff;
+
+}	
 	
-	
-	
-}
+
 #divleft{
 	float:left;
 }
 
 #divright{
 	float:right;
+}
+
+#divright a{
+	color:#fff;
 }
 
 .nav{
