@@ -58,17 +58,27 @@ $rowShop=mysql_fetch_assoc($rstShop);
                     <input type="reset"  name="reset" value="reset" style="width:80px;height:50px"/>
                     <input type="hidden" name="shop_id" value="<?php echo $rowShop['id'] ?>">
                     </form>
+                    <?php  
+                			$sqlCommit="select * from commit where shop_id={$id}";
+                			$rstCommit=mysql_query($sqlCommit);
+                			while($rowCommit=mysql_fetch_assoc($rstCommit)){
+                				$sqlUser="select * from user where id={$rowCommit['user_id']}";
+                				$rstUser=mysql_query($sqlUser);
+                				$rowUser=mysql_fetch_assoc($rstUser);
+                			?>
                 	<div class="head">
-                		<div class="headright">
-                	      <span>用户留言:</span>
+                		<div class="headleft">
+                	      <span><?php echo $rowUser['username'] ?>:</span>
                         </div>
-                        <div class="headleft">
-                          <span>发帖时间</span>
+                        <div class="headright">
+                          <span><?php echo date("Y-m-d H:i:s",$rowCommit['time']) ?></span>
                         </div>
                     </div>
                     <div>
-                    	<span>这个商品的情况</span>
-                    </div>    
+                    	<textarea style="width:1600px;resize:none"><?php echo $rowCommit['content']; ?></textarea>
+
+                    </div> 
+                    <?php  }  ?>   
                 <div class="nav"></div>
 			
 
