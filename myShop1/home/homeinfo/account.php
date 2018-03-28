@@ -51,9 +51,10 @@ session_start();
 								} 
 								?>
 								<tr>
-									<td colspan="3">总价：</td>
+									<td colspan="2">总价：</td>
 									<td colspan="2"><?php echo $total ?></td>
 									<td><a href="../cart/clearcart.php?del=0">清空购物车</a></td>
+									<td><a href="../">结算</td>
 								</tr>
 							</table>
 						</form>

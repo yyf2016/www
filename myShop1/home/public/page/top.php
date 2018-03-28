@@ -12,7 +12,7 @@
 	    <div id="divright">
 	    	<span>欢迎<?php
 	    	    if(isset($_SESSION['username'])){ 
-	    	            echo $_SESSION['username'];
+	    	            echo "<a title='个人中心' href='/myShop1/home/homeinfo/center.php'>{$_SESSION['username']}</a>";
 	    	       }else{
 	    	       	    echo "<a href='/myshop1/home/user/login.php'>登录</a> ";
 	    	       	    echo "| <a href='/myshop1//home/user/register.php'>注册</a>";
