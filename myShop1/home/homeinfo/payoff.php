@@ -67,7 +67,68 @@ mysql_query("set names utf8");
             </div>
         </div>
         <div class="nav"></div>
-       
+        <div class="contentTotal">
+            <div class="content">
+                <div class="head">
+                            <div class="headleft">
+                                <span>请选择收货地址：</span>
+                                <span><a href='relation.php'>增加收货地址</a>
+                                </span> 
+                            </div>
+                </div>
+                <div class="picture">
+                    <form action="ordertab.php" method="post">
+                            <table border="1px" color="#fff" cellpading="50" width="800px">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>姓名</th>
+                                    <th>地址</th>
+                                    <th>电话号码</th>
+                                    <th>email</th>
+                                    <th>修改</th>
+                                    <th>删除</th>
+                                </tr>
+                                <?php 
+                                   $sqlRelation="select * from relation where user_id={$_SESSION['user_id']}";
+                                   // echo $sqlRelation;
+                                   // echo "<pre>";
+                                   // print_r($_SESSION);
+                                   // echo "</pre>";
+                                   // exit;
+                                   $rstRelation=mysql_query($sqlRelation);
+                                   $i=0;
+                                   while($rowRelation=mysql_fetch_assoc($rstRelation)){
+
+                                    if($i<1){
+                                        echo "<tr><td><input type='radio' name='relation_id' value='{$rowRelation['id']}' checked></td>";
+                                    }else{
+                                        echo "<tr><td><input type='radio' name='relation_id' value='{$rowRelation['id']}' ></td>";
+                                    }
+
+                                ?>
+                                    <td><?php echo $rowRelation['id'] ?></td>
+                                    <td><?php echo $rowRelation['realname'] ?></td>
+                                    <td><?php echo $rowRelation['address'] ?></td>
+                                    <td><?php echo $rowRelation['telephone'] ?></td>
+                                    <td><?php echo $rowRelation['email'] ?></td>
+                                    <td><a href="">修改</a></td>
+                                    <td><a href="">删除</a></td>
+                                </tr>
+                                <?php 
+                                     $i+=1;
+                                   }
+                                ?>
+                                <tr>
+                                    <td colspan='4'><input type="submit" value="submit"/></td>
+                                    <td colspan='4'><input type="reset"  value="reset"/></td>
+                                </tr>
+                            </table>
+
+                        </form>    
+                </div>
+            </div>
+        </div>
+        <div class="nav"></div>
         <?php include "../public/page/footer.php" ?>
     </div>
 </body>

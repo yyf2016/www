@@ -20,7 +20,7 @@ mysql_query("set names utf8");
             <div class="content">
                  <div class="head">
                     <div class="headleft">
-                        <span>购物车：
+                        <span>付款订单：
                         </span> 
                     </div>
                 </div>
@@ -57,7 +57,7 @@ mysql_query("set names utf8");
                                     <td colspan="2">总价：</td>
                                     <td colspan="2"><?php echo $total ?></td>
                                     <td><a href="../cart/clearcart.php?del=0">清空购物车</a></td>
-                                    <td><a href="../">结算</td>
+                                    <td><a href="payoff.php">结算</td>
                                 </tr>
                             </table>
                         </form>
@@ -77,6 +77,7 @@ mysql_query("set names utf8");
                             </div>
                 </div>
                 <div class="picture">
+                    <form action="ordertab.php" method="post">
                             <table border="1px" color="#fff" cellpading="50" width="800px">
                                 <tr>
                                     <th>ID</th>
@@ -95,9 +96,16 @@ mysql_query("set names utf8");
                                    // echo "</pre>";
                                    // exit;
                                    $rstRelation=mysql_query($sqlRelation);
+                                   $i=0;
                                    while($rowRelation=mysql_fetch_assoc($rstRelation)){
+
+                                    if($i<1){
+                                        echo "<tr><td><input type='radio' name='address_check' value='{$rowRelation['id']}' checked></td>";
+                                    }else{
+                                        echo "<tr><td><input type='radio' name='address_check' value='{$rowRelation['id']}' ></td>";
+                                    }
+
                                 ?>
-                                <tr>
                                     <td><?php echo $rowRelation['id'] ?></td>
                                     <td><?php echo $rowRelation['realname'] ?></td>
                                     <td><?php echo $rowRelation['address'] ?></td>
@@ -107,10 +115,16 @@ mysql_query("set names utf8");
                                     <td><a href="">删除</a></td>
                                 </tr>
                                 <?php 
+                                     $i+=1;
                                    }
                                 ?>
-
+                                <tr>
+                                    <td colspan='4'><input type="submit" value="submit"/></td>
+                                    <td colspan='4'><input type="reset"  value="reset"/></td>
+                                </tr>
                             </table>
+
+                        </form>    
                 </div>
             </div>
         </div>
