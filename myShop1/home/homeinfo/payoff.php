@@ -9,7 +9,7 @@ mysql_query("set names utf8");
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../public/css/css.css">
-    <title>center.php</title>
+    <title>payoff.php</title>
 
 </head>
 <body>
@@ -34,7 +34,6 @@ mysql_query("set names utf8");
                                     <th>数量</th>
                                     <th>价钱</th>
                                     <th>删除</th>
-                                    
                                 </tr>
                                 <?php
                                    if(isset($_SESSION['shop'])){
